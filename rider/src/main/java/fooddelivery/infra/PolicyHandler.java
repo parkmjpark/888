@@ -24,22 +24,6 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='Orderplaced'"
-    )
-    public void wheneverOrderplaced_배송에추가(
-        @Payload Orderplaced orderplaced
-    ) {
-        Orderplaced event = orderplaced;
-        System.out.println(
-            "\n\n##### listener 배송에추가 : " + orderplaced + "\n\n"
-        );
-
-        // Sample Logic //
-        Delivery.배송에추가(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='Cookfinished'"
     )
     public void wheneverCookfinished_UpdateStatus(
@@ -48,6 +32,22 @@ public class PolicyHandler {
         Cookfinished event = cookfinished;
         System.out.println(
             "\n\n##### listener UpdateStatus : " + cookfinished + "\n\n"
+        );
+
+        // Sample Logic //
+        Delivery.updateStatus(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Orderplaced'"
+    )
+    public void wheneverOrderplaced_UpdateStatus(
+        @Payload Orderplaced orderplaced
+    ) {
+        Orderplaced event = orderplaced;
+        System.out.println(
+            "\n\n##### listener UpdateStatus : " + orderplaced + "\n\n"
         );
 
         // Sample Logic //

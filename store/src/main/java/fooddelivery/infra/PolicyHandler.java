@@ -24,28 +24,28 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='Orderplaced'"
-    )
-    public void wheneverOrderplaced_주문에추가(
-        @Payload Orderplaced orderplaced
-    ) {
-        Orderplaced event = orderplaced;
-        System.out.println(
-            "\n\n##### listener 주문에추가 : " + orderplaced + "\n\n"
-        );
-
-        // Sample Logic //
-        Foodcooking.주문에추가(event);
-    }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='Paid'"
     )
     public void wheneverPaid_UpdateStatus(@Payload Paid paid) {
         Paid event = paid;
         System.out.println(
             "\n\n##### listener UpdateStatus : " + paid + "\n\n"
+        );
+
+        // Sample Logic //
+        Foodcooking.updateStatus(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='Orderplaced'"
+    )
+    public void wheneverOrderplaced_UpdateStatus(
+        @Payload Orderplaced orderplaced
+    ) {
+        Orderplaced event = orderplaced;
+        System.out.println(
+            "\n\n##### listener UpdateStatus : " + orderplaced + "\n\n"
         );
 
         // Sample Logic //

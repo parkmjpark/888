@@ -42,26 +42,6 @@ public class Delivery {
         return deliveryRepository;
     }
 
-    public static void 배송에추가(Orderplaced orderplaced) {
-        /** Example 1:  new item 
-        Delivery delivery = new Delivery();
-        repository().save(delivery);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderplaced.get???()).ifPresent(delivery->{
-            
-            delivery // do something
-            repository().save(delivery);
-
-
-         });
-        */
-
-    }
-
     public static void updateStatus(Cookfinished cookfinished) {
         /** Example 1:  new item 
         Delivery delivery = new Delivery();
@@ -72,6 +52,26 @@ public class Delivery {
         /** Example 2:  finding and process
         
         repository().findById(cookfinished.get???()).ifPresent(delivery->{
+            
+            delivery // do something
+            repository().save(delivery);
+
+
+         });
+        */
+
+    }
+
+    public static void updateStatus(Orderplaced orderplaced) {
+        /** Example 1:  new item 
+        Delivery delivery = new Delivery();
+        repository().save(delivery);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(orderplaced.get???()).ifPresent(delivery->{
             
             delivery // do something
             repository().save(delivery);

@@ -56,26 +56,6 @@ public class Foodcooking {
         return foodcookingRepository;
     }
 
-    public static void 주문에추가(Orderplaced orderplaced) {
-        /** Example 1:  new item 
-        Foodcooking foodcooking = new Foodcooking();
-        repository().save(foodcooking);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(orderplaced.get???()).ifPresent(foodcooking->{
-            
-            foodcooking // do something
-            repository().save(foodcooking);
-
-
-         });
-        */
-
-    }
-
     public static void updateStatus(Paid paid) {
         /** Example 1:  new item 
         Foodcooking foodcooking = new Foodcooking();
@@ -86,6 +66,26 @@ public class Foodcooking {
         /** Example 2:  finding and process
         
         repository().findById(paid.get???()).ifPresent(foodcooking->{
+            
+            foodcooking // do something
+            repository().save(foodcooking);
+
+
+         });
+        */
+
+    }
+
+    public static void updateStatus(Orderplaced orderplaced) {
+        /** Example 1:  new item 
+        Foodcooking foodcooking = new Foodcooking();
+        repository().save(foodcooking);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(orderplaced.get???()).ifPresent(foodcooking->{
             
             foodcooking // do something
             repository().save(foodcooking);
